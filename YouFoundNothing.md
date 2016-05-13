@@ -1,2 +1,2 @@
-You Found Nothing?<br />
-Go visit http://gseeQ.com
+You Find Nothing?<br />
+Go gseeQ.com
