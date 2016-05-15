@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<title>Catch triple click in JavaScript</title>
+<button id="myButton" type="button">HTML5 Button</button>
+<p>Double click this button and <em>click it again within 0.5 second</em>.</p>
+<p>In other words, quickly click 3 times, last click sohuld be within 0.5 second of previous.</p>
+<p>Clicking more than 3 times also triggers click, doubleclick and tripleclick.</p>
+<script>
+var clickAfterDoubleClick = false;
+document.getElementById("myButton").addEventListener("dblclick", function () {
+	clickAfterDoubleClick = setTimeout(function () {
+		clickAfterDoubleClick = false;
+    }, 1000);
+});
+document.getElementById("myButton").addEventListener("click", function () {
+    if(clickAfterDoubleClick) {
+		alert("Triple click");
+		clearTimeout(clickAfterDoubleClick);
+		clickAfterDoubleClick = false;
+	}
+});
+</script>
+</html>
